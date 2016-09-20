@@ -1,0 +1,117 @@
+body {
+  padding: 60px;
+}
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+}
+
+.wrapper {
+  box-sizing: border-box;
+  width: calc(100% + 16px);
+  display: table;
+}
+
+.slider {
+  box-sizing: border-box;
+  width: 99%;
+  display: table;
+  overflow: hidden;
+  background-color: #aa1;
+}
+
+.block {
+  box-sizing: border-box;
+  display: table-cell;
+  width: 25%;
+  background-color: #fa2;
+  border-right: 8px solid #fff;
+}
+
+.aspect {
+  box-sizing: border-box;
+  position: relative;
+  padding-top: 50%;
+  width: 200%;
+}
+
+.asinner {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.grid {
+  position: absolute;
+  display: table;
+  width: 50%;
+  height: 100%;
+}
+
+.cell {
+  box-sizing: border-box;
+  display: table-cell;
+  height: 100%;
+  border-right: 8px solid #fff;
+}
+
+.cell1 {
+  background-color: red;
+}
+
+.cell2 {
+  background-color: blue;
+}
+
+.animation1 {
+  left: 0;
+  animation: cycle 10s linear infinite;
+}
+
+.animation2 {
+  left: 50%;
+  animation: cycle2 10s linear infinite;
+}
+
+@keyframes cycle {
+  25% { transform: translateX(-100%); }
+  50% { transform: translateX(-100%); }
+  50.001% { transform: translateX(100%); }
+  75% { transform: translateX(0); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes cycle2 {
+  25% { transform: translateX(-100%); }
+  50% { transform: translateX(-100%); }
+  75% { transform: translateX(-200%); }
+  100% { transform: translateX(-200%); }
+}
+
+@media only screen and (max-width: 600px) {
+  .block {
+    width: 50%;
+    border-right: none;
+  }
+
+  .aspect {
+    padding-top: 100%;
+  }
+
+  .grid {
+    width: 300%;
+  }
+
+  .cell {
+    border-right: none;
+  }
+
+  .animation2 {
+    left: 300%;
+  }
+}
